@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music API Interface</title>
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #111827;
+            --border: #334155; /* Refined for visibility */
+            --text: #caccd1;
+            --muted: #9ca3af;
+            --accent: #a33865;
+            --guide: rgb(117, 16, 92);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', system-ui, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-bar {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            color: var(--text);
+            width: 300px;
+        }
+
+        .search-bar:focus {
+            outline: 2px solid var(--guide);
+            border-color: transparent;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .card img {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: 8px;
+            background: var(--bg);
+            margin-bottom: 1rem;
+        }
+
+        .card h3 { margin: 0; font-size: 1rem; color: var(--text); }
+        .card p { margin: 0.5rem 0 0; font-size: 0.85rem; color: var(--muted); }
+
+        .player-bar {
+            background: var(--panel);
+            border-top: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn-primary {
+            position: relative;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            left: 10px;
+        }
+
+        .btn-primary:hover { background: var(--guide); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h2 style="color: var(--accent); margin: 0;">VibeStream</h2>
+    <div>
+        <input type="text" class="search-bar" placeholder="Search track or artist...">
+        <button class="btn-primary">Search</button>
+    </div>
+</header>
+
+<main id="app-grid">
+    <!-- Example Card -->
+    <div class="card">
+        <img src="https://placehold.co" alt="Album Art">
+        <h3>Song Title</h3>
+        <p>Artist Name</p>
+    </div>
+</main>
+
+<footer class="player-bar">
+    <div style="display: flex; gap: 1rem; align-items: center;">
+        <div style="width: 45px; height: 45px; background: var(--border); border-radius: 4px;"></div>
+        <div>
+            <div style="font-size: 0.9rem;">Now Playing...</div>
+            <div style="font-size: 0.75rem; color: var(--muted);">Select a track</div>
+        </div>
+    </div>
+    
+    <div style="flex-grow: 1; max-width: 400px; text-align: center;">
+        <audio controls style="width: 100%; height: 32px; border-radius: 8px;"></audio>
+    </div>
+
+    <div style="width: 150px; text-align: right; color: var(--muted);">
+        Vol: 80%
+    </div>
+</footer>
+</body>
+
+<style>
+
+
+
+</style>
+
+</html>
