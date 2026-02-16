@@ -1,0 +1,236 @@
+<!-- privacy.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #020617;
+      --panel: #111827;
+      --border: #334155;
+      --text: #caccd1;
+      --muted: #9ca3af;
+      --accent: #a33865;
+      --guide: rgb(117, 16, 92);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 700px at 15% 10%, rgba(163,56,101,.18), transparent 60%),
+                  radial-gradient(900px 600px at 85% 80%, rgba(117,16,92,.14), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      padding: 24px;
+    }
+
+    .wrap { width: 100%; max-width: 920px; margin: 0 auto; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 12px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .logo {
+      width: 42px; height: 42px; border-radius: 14px;
+      border: 1px solid rgba(163,56,101,.55);
+      background: radial-gradient(circle at 30% 25%, rgba(163,56,101,.75), rgba(117,16,92,.35) 55%, rgba(2,6,23,.35) 100%);
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    }
+
+    h1 { margin: 0; font-size: 22px; letter-spacing: .2px; }
+    .sub { margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+
+    .meta { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; color: rgba(156,163,175,.8); font-size: 12px; }
+    .badge { border: 1px solid rgba(51,65,85,.75); background: rgba(2,6,23,.35); padding: 8px 10px; border-radius: 999px; }
+
+    .nav { display: flex; gap: 10px; flex-wrap: wrap; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 12px; border-radius: 999px;
+      border: 1px solid rgba(51,65,85,.8);
+      background: rgba(17,24,39,.55);
+      color: rgba(202,204,209,.92);
+      font-size: 12px;
+      text-decoration: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    .chip:hover { border-color: rgba(163,56,101,.55); box-shadow: 0 0 0 4px rgba(163,56,101,.10); }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border: 1px solid rgba(51,65,85,.7);
+      box-shadow: 0 18px 50px rgba(0,0,0,.55);
+      border-radius: 18px;
+      overflow: hidden;
+      position: relative;
+    }
+    .card::before {
+      content: ""; position: absolute; inset: -1px;
+      background: radial-gradient(700px 220px at 18% 0%, rgba(163,56,101,.22), transparent 70%),
+                  radial-gradient(600px 240px at 88% 10%, rgba(117,16,92,.18), transparent 70%);
+      pointer-events: none; opacity: .9;
+    }
+    .inner { position: relative; padding: 22px; backdrop-filter: blur(6px); }
+
+    .panel {
+      border: 1px solid rgba(51,65,85,.7);
+      background: rgba(17,24,39,.52);
+      border-radius: 16px;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .panel::before {
+      content: ""; position: absolute; inset: 0;
+      background: radial-gradient(520px 160px at 20% 0%, rgba(163,56,101,.12), transparent 70%);
+      pointer-events: none; opacity: .9;
+    }
+    .panel > * { position: relative; }
+
+    h2 { margin: 0 0 10px; font-size: 16px; letter-spacing: .2px; }
+    h3 {
+      margin: 14px 0 8px;
+      font-size: 13px;
+      color: rgba(202,204,209,.95);
+      letter-spacing: .2px;
+      text-transform: uppercase;
+    }
+    p, li { color: rgba(202,204,209,.92); font-size: 13px; line-height: 1.6; }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+    li { margin: 6px 0; }
+
+    .divider { height: 1px; background: rgba(51,65,85,.75); margin: 16px 0; }
+
+    a { color: rgba(163,56,101,.95); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .callout {
+      border: 1px solid rgba(163,56,101,.45);
+      background: rgba(163,56,101,.08);
+      border-radius: 16px;
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      color: rgba(202,204,209,.92);
+    }
+
+    .foot {
+      margin-top: 14px;
+      color: rgba(156,163,175,.8);
+      font-size: 12px;
+      line-height: 1.5;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Privacy Policy</h1>
+          <div class="sub">How we collect, use, and protect your data.</div>
+          <div class="meta">
+            <span class="badge">Effective: Feb 16, 2026</span>
+            <span class="badge">Last updated: Feb 16, 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Page navigation">
+        <a class="chip" href="/terms/">Terms</a>
+        <a class="chip" href="/register/">Register</a>
+        <a class="chip" href="/login/">Login</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <div class="inner">
+        <div class="callout">
+          Template only. Replace placeholders (app name, contact email, actual data practices). If you track analytics/ads or share data, update this.
+        </div>
+
+        <article class="panel" aria-label="Privacy content">
+          <h2>Overview</h2>
+          <p>
+            This policy explains what information we collect, how we use it, and the choices you have. We do not sell your personal data.
+          </p>
+
+          <h3>1) Information we collect</h3>
+          <ul>
+            <li><strong>Account data:</strong> username, email, and basic profile fields you submit.</li>
+            <li><strong>Authentication data:</strong> session identifiers and security metadata (e.g., CSRF token).</li>
+            <li><strong>SoundCloud data:</strong> if you connect SoundCloud, we store OAuth tokens and basic account identifiers.</li>
+            <li><strong>Usage logs:</strong> basic logs (time, endpoint, errors) used for reliability and security.</li>
+          </ul>
+
+          <h3>2) How we use information</h3>
+          <ul>
+            <li>To provide login, account management, and core app features.</li>
+            <li>To connect to SoundCloud on your behalf (searching, fetching tracks, etc.).</li>
+            <li>To secure the Service, prevent abuse, and debug issues.</li>
+          </ul>
+
+          <h3>3) SoundCloud OAuth tokens</h3>
+          <p>
+            If you connect SoundCloud, we store access/refresh tokens server-side to make authorized API calls for you. You can disconnect SoundCloud
+            in your account settings, which removes stored tokens from our database.
+          </p>
+
+          <h3>4) Sharing</h3>
+          <ul>
+            <li>We share data only as needed to operate the Service (e.g., hosting providers) or if required by law.</li>
+            <li>When you use SoundCloud features, your requests interact with SoundCloud’s systems under their policies.</li>
+            <li>We do not sell personal data.</li>
+          </ul>
+
+          <h3>5) Cookies & sessions</h3>
+          <p>
+            We use cookies/session storage for authentication and security. Disabling cookies may prevent login from working.
+          </p>
+
+          <h3>6) Data retention</h3>
+          <p>
+            We retain account data while your account is active. If you delete your account, we remove or anonymize your data, except where retention
+            is required for legal or security purposes.
+          </p>
+
+          <h3>7) Security</h3>
+          <p>
+            We use reasonable safeguards to protect data, but no system is 100% secure. Keep your password safe and use strong credentials.
+          </p>
+
+          <h3>8) Your choices</h3>
+          <ul>
+            <li>Access/update your account information from your profile/settings.</li>
+            <li>Disconnect SoundCloud to revoke the Service’s ability to access SoundCloud on your behalf.</li>
+            <li>Request account deletion through support.</li>
+          </ul>
+
+          <h3>9) Changes</h3>
+          <p>
+            We may update this policy. We’ll update the “Last updated” date above when changes are published.
+          </p>
+
+          <div class="divider"></div>
+
+          <h3>Contact</h3>
+          <p>
+            Questions about privacy? Contact <a href="mailto:privacy@example.com">privacy@example.com</a>.
+          </p>
+        </article>
+
+        <div class="foot">© Your App Name. Replace placeholder details to match your product.</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

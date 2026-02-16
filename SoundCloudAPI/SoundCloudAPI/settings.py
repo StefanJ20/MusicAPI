@@ -27,6 +27,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
+SC_CLIENT_ID = os.environ.get("SC_CLIENT_ID")
+SC_CLIENT_SECRET = os.environ.get("SC_CLIENT_SECRET")
+SC_REDIRECT_URI = os.environ.get("SC_REDIRECT_URI")
+
 
 
 # Application definition
@@ -100,6 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+LOGIN_URL = "/login"
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
